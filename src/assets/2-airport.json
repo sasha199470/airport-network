@@ -1,0 +1,290 @@
+{
+  "request": {
+    "airport": {
+      "requestedCode": "AER",
+      "fsCode": "AER"
+    },
+    "codeType": {
+      "requested": "FS",
+      "interpreted": "FS"
+    },
+    "departing": true,
+    "date": {
+      "year": "2017",
+      "month": "7",
+      "day": "6",
+      "interpreted": "2017-07-06"
+    },
+    "hourOfDay": {
+      "requested": "21",
+      "interpreted": 21
+    },
+    "url": "https://api.flightstats.com/flex/schedules/rest/v1/json/from/AER/departing/2017/7/6/21"
+  },
+  "scheduledFlights": [
+    {
+      "carrierFsCode": "SU",
+      "flightNumber": "1131",
+      "departureAirportFsCode": "AER",
+      "arrivalAirportFsCode": "SVO",
+      "stops": 0,
+      "arrivalTerminal": "D",
+      "departureTime": "2017-07-06T21:25:00.000",
+      "arrivalTime": "2017-07-06T23:50:00.000",
+      "flightEquipmentIataCode": "32A",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [
+        {
+          "carrierFsCode": "KL",
+          "flightNumber": "3203",
+          "serviceType": "J",
+          "serviceClasses": [
+            "R",
+            "F",
+            "J",
+            "Y"
+          ],
+          "trafficRestrictions": [
+            "G"
+          ],
+          "referenceCode": 10008182
+        }
+      ],
+      "referenceCode": "178-37231--"
+    },
+    {
+      "carrierFsCode": "KL",
+      "flightNumber": "3203",
+      "departureAirportFsCode": "AER",
+      "arrivalAirportFsCode": "SVO",
+      "stops": 0,
+      "arrivalTerminal": "D",
+      "departureTime": "2017-07-06T21:25:00.000",
+      "arrivalTime": "2017-07-06T23:50:00.000",
+      "flightEquipmentIataCode": "32A",
+      "isCodeshare": true,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [
+        "G"
+      ],
+      "operator": {
+        "carrierFsCode": "SU",
+        "flightNumber": "1131",
+        "serviceType": "J",
+        "serviceClasses": [
+          "R",
+          "F",
+          "J",
+          "Y"
+        ],
+        "trafficRestrictions": []
+      },
+      "codeshares": [],
+      "referenceCode": "178-37231--10008182"
+    },
+    {
+      "carrierFsCode": "TK",
+      "flightNumber": "9153",
+      "departureAirportFsCode": "AER",
+      "arrivalAirportFsCode": "VKO",
+      "stops": 0,
+      "arrivalTerminal": "A",
+      "departureTime": "2017-07-06T21:05:00.000",
+      "arrivalTime": "2017-07-06T23:10:00.000",
+      "flightEquipmentIataCode": "738",
+      "isCodeshare": true,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [
+        "O"
+      ],
+      "operator": {
+        "carrierFsCode": "UT",
+        "flightNumber": "268",
+        "serviceType": "J",
+        "serviceClasses": [
+          "R",
+          "F",
+          "J",
+          "Y"
+        ],
+        "trafficRestrictions": []
+      },
+      "codeshares": [],
+      "referenceCode": "178-37426--37434"
+    },
+    {
+      "carrierFsCode": "UT",
+      "flightNumber": "268",
+      "departureAirportFsCode": "AER",
+      "arrivalAirportFsCode": "VKO",
+      "stops": 0,
+      "arrivalTerminal": "A",
+      "departureTime": "2017-07-06T21:05:00.000",
+      "arrivalTime": "2017-07-06T23:10:00.000",
+      "flightEquipmentIataCode": "738",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [
+        {
+          "carrierFsCode": "TK",
+          "flightNumber": "9153",
+          "serviceType": "J",
+          "serviceClasses": [
+            "R",
+            "F",
+            "J",
+            "Y"
+          ],
+          "trafficRestrictions": [
+            "O"
+          ],
+          "referenceCode": 37434
+        }
+      ],
+      "referenceCode": "178-37426--"
+    }
+  ],
+  "appendix": {
+    "airlines": [
+      {
+        "fs": "KL",
+        "iata": "KL",
+        "icao": "KLM",
+        "name": "KLM",
+        "phoneNumber": "1-800-447-4747",
+        "active": true
+      },
+      {
+        "fs": "SU",
+        "iata": "SU",
+        "icao": "AFL",
+        "name": "Aeroflot",
+        "phoneNumber": "+7 495 223-55-55",
+        "active": true
+      },
+      {
+        "fs": "TK",
+        "iata": "TK",
+        "icao": "THY",
+        "name": "Turkish Airlines",
+        "phoneNumber": "+90 212 444 0 849",
+        "active": true
+      },
+      {
+        "fs": "UT",
+        "iata": "UT",
+        "icao": "UTA",
+        "name": "UTair",
+        "active": true
+      }
+    ],
+    "airports": [
+      {
+        "fs": "SVO",
+        "iata": "SVO",
+        "icao": "UUEE",
+        "name": "Sheremetyevo International Airport",
+        "city": "Moscow",
+        "cityCode": "MOW",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:10:20.427",
+        "utcOffsetHours": 3,
+        "latitude": 55.966324,
+        "longitude": 37.416574,
+        "elevationFeet": 630,
+        "classification": 1,
+        "active": true
+      },
+      {
+        "fs": "AER",
+        "iata": "AER",
+        "icao": "URSS",
+        "name": "Sochi International Airport",
+        "city": "Adler/Sochi",
+        "cityCode": "AER",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:10:20.424",
+        "utcOffsetHours": 3,
+        "latitude": 43.44884,
+        "longitude": 39.941106,
+        "elevationFeet": 89,
+        "classification": 3,
+        "active": true
+      },
+      {
+        "fs": "VKO",
+        "iata": "VKO",
+        "icao": "UUWW",
+        "name": "Vnukovo Airport",
+        "city": "Moscow",
+        "cityCode": "MOW",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:10:20.427",
+        "utcOffsetHours": 3,
+        "latitude": 55.60315,
+        "longitude": 37.292098,
+        "elevationFeet": 686,
+        "classification": 2,
+        "active": true
+      }
+    ],
+    "equipments": [
+      {
+        "iata": "32A",
+        "name": "Airbus A320 (sharklets)",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": false
+      },
+      {
+        "iata": "738",
+        "name": "Boeing 737-800 Passenger",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": false
+      }
+    ]
+  }
+}

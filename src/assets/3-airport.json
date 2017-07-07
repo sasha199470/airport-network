@@ -1,0 +1,443 @@
+{
+  "request": {
+    "airport": {
+      "requestedCode": "VKO",
+      "fsCode": "VKO"
+    },
+    "codeType": {
+      "requested": "FS",
+      "interpreted": "FS"
+    },
+    "departing": true,
+    "date": {
+      "year": "2017",
+      "month": "7",
+      "day": "6",
+      "interpreted": "2017-07-06"
+    },
+    "hourOfDay": {
+      "requested": "21",
+      "interpreted": 21
+    },
+    "url": "https://api.flightstats.com/flex/schedules/rest/v1/json/from/VKO/departing/2017/7/6/21"
+  },
+  "scheduledFlights": [
+    {
+      "carrierFsCode": "DP*",
+      "flightNumber": "417",
+      "departureAirportFsCode": "VKO",
+      "arrivalAirportFsCode": "KJA",
+      "stops": 0,
+      "departureTerminal": "A",
+      "departureTime": "2017-07-06T21:55:00.000",
+      "arrivalTime": "2017-07-07T06:40:00.000",
+      "flightEquipmentIataCode": "738",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "referenceCode": "178-3811950--"
+    },
+    {
+      "carrierFsCode": "TK",
+      "flightNumber": "9026",
+      "departureAirportFsCode": "VKO",
+      "arrivalAirportFsCode": "KJA",
+      "stops": 0,
+      "departureTerminal": "A",
+      "arrivalTerminal": "1",
+      "departureTime": "2017-07-06T21:10:00.000",
+      "arrivalTime": "2017-07-07T06:00:00.000",
+      "flightEquipmentIataCode": "738",
+      "isCodeshare": true,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [
+        "O"
+      ],
+      "operator": {
+        "carrierFsCode": "UT",
+        "flightNumber": "571",
+        "serviceType": "J",
+        "serviceClasses": [
+          "R",
+          "F",
+          "J",
+          "Y"
+        ],
+        "trafficRestrictions": []
+      },
+      "codeshares": [],
+      "referenceCode": "178-3811953--3811952"
+    },
+    {
+      "carrierFsCode": "UT",
+      "flightNumber": "571",
+      "departureAirportFsCode": "VKO",
+      "arrivalAirportFsCode": "KJA",
+      "stops": 0,
+      "departureTerminal": "A",
+      "arrivalTerminal": "1",
+      "departureTime": "2017-07-06T21:10:00.000",
+      "arrivalTime": "2017-07-07T06:00:00.000",
+      "flightEquipmentIataCode": "738",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [
+        {
+          "carrierFsCode": "TK",
+          "flightNumber": "9026",
+          "serviceType": "J",
+          "serviceClasses": [
+            "R",
+            "F",
+            "J",
+            "Y"
+          ],
+          "trafficRestrictions": [
+            "O"
+          ],
+          "referenceCode": 3811952
+        }
+      ],
+      "referenceCode": "178-3811953--"
+    },
+    {
+      "carrierFsCode": "SU",
+      "flightNumber": "6062",
+      "departureAirportFsCode": "VKO",
+      "arrivalAirportFsCode": "KRR",
+      "stops": 0,
+      "departureTerminal": "A",
+      "departureTime": "2017-07-06T21:35:00.000",
+      "arrivalTime": "2017-07-06T23:45:00.000",
+      "flightEquipmentIataCode": "319",
+      "isCodeshare": false,
+      "isWetlease": true,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "wetleaseOperatorFsCode": "FV",
+      "referenceCode": "178-3811962--"
+    },
+    {
+      "carrierFsCode": "TK",
+      "flightNumber": "9064",
+      "departureAirportFsCode": "VKO",
+      "arrivalAirportFsCode": "LED",
+      "stops": 0,
+      "departureTerminal": "A",
+      "arrivalTerminal": "1",
+      "departureTime": "2017-07-06T21:00:00.000",
+      "arrivalTime": "2017-07-06T22:25:00.000",
+      "flightEquipmentIataCode": "735",
+      "isCodeshare": true,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [
+        "O"
+      ],
+      "operator": {
+        "carrierFsCode": "UT",
+        "flightNumber": "489",
+        "serviceType": "J",
+        "serviceClasses": [
+          "R",
+          "F",
+          "J",
+          "Y"
+        ],
+        "trafficRestrictions": []
+      },
+      "codeshares": [],
+      "referenceCode": "178-3812082--3812076"
+    },
+    {
+      "carrierFsCode": "SU",
+      "flightNumber": "6034",
+      "departureAirportFsCode": "VKO",
+      "arrivalAirportFsCode": "LED",
+      "stops": 0,
+      "departureTerminal": "A",
+      "arrivalTerminal": "1",
+      "departureTime": "2017-07-06T21:45:00.000",
+      "arrivalTime": "2017-07-06T23:15:00.000",
+      "flightEquipmentIataCode": "319",
+      "isCodeshare": false,
+      "isWetlease": true,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "wetleaseOperatorFsCode": "FV",
+      "referenceCode": "178-3812014--"
+    },
+    {
+      "carrierFsCode": "UT",
+      "flightNumber": "489",
+      "departureAirportFsCode": "VKO",
+      "arrivalAirportFsCode": "LED",
+      "stops": 0,
+      "departureTerminal": "A",
+      "arrivalTerminal": "1",
+      "departureTime": "2017-07-06T21:00:00.000",
+      "arrivalTime": "2017-07-06T22:25:00.000",
+      "flightEquipmentIataCode": "735",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [
+        {
+          "carrierFsCode": "TK",
+          "flightNumber": "9064",
+          "serviceType": "J",
+          "serviceClasses": [
+            "R",
+            "F",
+            "J",
+            "Y"
+          ],
+          "trafficRestrictions": [
+            "O"
+          ],
+          "referenceCode": 3812076
+        }
+      ],
+      "referenceCode": "178-3812082--"
+    },
+    {
+      "carrierFsCode": "SU",
+      "flightNumber": "6153",
+      "departureAirportFsCode": "VKO",
+      "arrivalAirportFsCode": "SIP",
+      "stops": 0,
+      "departureTerminal": "A",
+      "arrivalTerminal": "A",
+      "departureTime": "2017-07-06T21:15:00.000",
+      "arrivalTime": "2017-07-06T23:50:00.000",
+      "flightEquipmentIataCode": "738",
+      "isCodeshare": false,
+      "isWetlease": true,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "wetleaseOperatorFsCode": "FV",
+      "referenceCode": "178-3812363--"
+    }
+  ],
+  "appendix": {
+    "airlines": [
+      {
+        "fs": "SU",
+        "iata": "SU",
+        "icao": "AFL",
+        "name": "Aeroflot",
+        "phoneNumber": "+7 495 223-55-55",
+        "active": true
+      },
+      {
+        "fs": "FV",
+        "iata": "FV",
+        "icao": "SDM",
+        "name": "Rossiya Airlines",
+        "phoneNumber": "+812 333-22-22",
+        "active": true
+      },
+      {
+        "fs": "TK",
+        "iata": "TK",
+        "icao": "THY",
+        "name": "Turkish Airlines",
+        "phoneNumber": "+90 212 444 0 849",
+        "active": true
+      },
+      {
+        "fs": "DP*",
+        "iata": "DP",
+        "icao": "PBD",
+        "name": "Pobeda",
+        "active": true
+      },
+      {
+        "fs": "UT",
+        "iata": "UT",
+        "icao": "UTA",
+        "name": "UTair",
+        "active": true
+      }
+    ],
+    "airports": [
+      {
+        "fs": "KJA",
+        "iata": "KJA",
+        "icao": "UNKL",
+        "name": "Yemelyanovo Airport",
+        "city": "Krasnojarsk",
+        "cityCode": "KJA",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Asia/Krasnoyarsk",
+        "localTime": "2017-07-08T01:54:25.908",
+        "utcOffsetHours": 7,
+        "latitude": 56.18113,
+        "longitude": 92.482859,
+        "elevationFeet": 942,
+        "classification": 3,
+        "active": true
+      },
+      {
+        "fs": "KRR",
+        "iata": "KRR",
+        "icao": "URKK",
+        "name": "Krasnodar International Airport",
+        "city": "Krasnodar",
+        "cityCode": "KRR",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:54:25.908",
+        "utcOffsetHours": 3,
+        "latitude": 45.034138,
+        "longitude": 39.139002,
+        "elevationFeet": 118,
+        "classification": 3,
+        "active": true
+      },
+      {
+        "fs": "LED",
+        "iata": "LED",
+        "icao": "ULLI",
+        "name": "Pulkovo Airport",
+        "city": "Saint Petersburg",
+        "cityCode": "LED",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:54:25.908",
+        "utcOffsetHours": 3,
+        "latitude": 59.799847,
+        "longitude": 30.270505,
+        "elevationFeet": 76,
+        "classification": 2,
+        "active": true
+      },
+      {
+        "fs": "VKO",
+        "iata": "VKO",
+        "icao": "UUWW",
+        "name": "Vnukovo Airport",
+        "city": "Moscow",
+        "cityCode": "MOW",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:54:25.904",
+        "utcOffsetHours": 3,
+        "latitude": 55.60315,
+        "longitude": 37.292098,
+        "elevationFeet": 686,
+        "classification": 2,
+        "active": true
+      },
+      {
+        "fs": "SIP",
+        "iata": "SIP",
+        "icao": "UKFF",
+        "name": "Simferopol International Airport",
+        "city": "Simferopol",
+        "cityCode": "SIP",
+        "countryCode": "UA",
+        "countryName": "Ukraine",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Kiev",
+        "localTime": "2017-07-07T21:54:25.908",
+        "utcOffsetHours": 3,
+        "latitude": 45.020658,
+        "longitude": 33.998193,
+        "elevationFeet": 637,
+        "classification": 4,
+        "active": true
+      }
+    ],
+    "equipments": [
+      {
+        "iata": "735",
+        "name": "Boeing 737-500 Passenger",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": false
+      },
+      {
+        "iata": "319",
+        "name": "Airbus A319",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": false
+      },
+      {
+        "iata": "738",
+        "name": "Boeing 737-800 Passenger",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": false
+      }
+    ]
+  }
+}

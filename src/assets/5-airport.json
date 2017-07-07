@@ -1,0 +1,110 @@
+{
+  "request": {
+    "airport": {
+      "requestedCode": "KZN",
+      "fsCode": "KZN"
+    },
+    "codeType": {
+      "requested": "FS",
+      "interpreted": "FS"
+    },
+    "departing": true,
+    "date": {
+      "year": "2017",
+      "month": "7",
+      "day": "6",
+      "interpreted": "2017-07-06"
+    },
+    "hourOfDay": {
+      "requested": "21",
+      "interpreted": 21
+    },
+    "url": "https://api.flightstats.com/flex/schedules/rest/v1/json/from/KZN/departing/2017/7/6/21"
+  },
+  "scheduledFlights": [
+    {
+      "carrierFsCode": "UT",
+      "flightNumber": "326",
+      "departureAirportFsCode": "KZN",
+      "arrivalAirportFsCode": "VKO",
+      "stops": 0,
+      "arrivalTerminal": "A",
+      "departureTime": "2017-07-06T21:55:00.000",
+      "arrivalTime": "2017-07-06T23:25:00.000",
+      "flightEquipmentIataCode": "735",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "referenceCode": "178-1915874--"
+    }
+  ],
+  "appendix": {
+    "airlines": [
+      {
+        "fs": "UT",
+        "iata": "UT",
+        "icao": "UTA",
+        "name": "UTair",
+        "active": true
+      }
+    ],
+    "airports": [
+      {
+        "fs": "VKO",
+        "iata": "VKO",
+        "icao": "UUWW",
+        "name": "Vnukovo Airport",
+        "city": "Moscow",
+        "cityCode": "MOW",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:14:20.628",
+        "utcOffsetHours": 3,
+        "latitude": 55.60315,
+        "longitude": 37.292098,
+        "elevationFeet": 686,
+        "classification": 2,
+        "active": true
+      },
+      {
+        "fs": "KZN",
+        "iata": "KZN",
+        "icao": "UWKD",
+        "name": "Kazan International Airport",
+        "city": "Kazan",
+        "cityCode": "KZN",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:14:20.582",
+        "utcOffsetHours": 3,
+        "latitude": 55.608439,
+        "longitude": 49.29824,
+        "elevationFeet": 407,
+        "classification": 3,
+        "active": true
+      }
+    ],
+    "equipments": [
+      {
+        "iata": "735",
+        "name": "Boeing 737-500 Passenger",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": false
+      }
+    ]
+  }
+}

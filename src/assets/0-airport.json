@@ -1,0 +1,267 @@
+{
+ "request": {
+  "airport": {
+   "requestedCode": "KGD",
+   "fsCode": "KGD"
+  },
+  "codeType": {
+   "requested": "FS",
+   "interpreted": "FS"
+  },
+  "departing": true,
+  "date": {
+   "year": "2017",
+   "month": "7",
+   "day": "6",
+   "interpreted": "2017-07-06"
+  },
+  "hourOfDay": {
+   "requested": "20",
+   "interpreted": 20
+  },
+  "url": "https://api.flightstats.com/flex/schedules/rest/v1/json/from/KGD/departing/2017/7/6/20"
+ },
+ "scheduledFlights": [
+  {
+   "carrierFsCode": "5N",
+   "flightNumber": "176",
+   "departureAirportFsCode": "KGD",
+   "arrivalAirportFsCode": "ARH",
+   "stops": 0,
+   "departureTime": "2017-07-06T20:45:00.000",
+   "arrivalTime": "2017-07-07T00:25:00.000",
+   "flightEquipmentIataCode": "735",
+   "isCodeshare": false,
+   "isWetlease": false,
+   "serviceType": "J",
+   "serviceClasses": [
+    "R",
+    "F",
+    "J",
+    "Y"
+   ],
+   "trafficRestrictions": [],
+   "codeshares": [],
+   "referenceCode": "177-1840498--"
+  },
+  {
+   "carrierFsCode": "5N",
+   "flightNumber": "754",
+   "departureAirportFsCode": "KGD",
+   "arrivalAirportFsCode": "DME",
+   "stops": 0,
+   "departureTime": "2017-07-06T20:50:00.000",
+   "arrivalTime": "2017-07-06T23:45:00.000",
+   "flightEquipmentIataCode": "735",
+   "isCodeshare": false,
+   "isWetlease": false,
+   "serviceType": "J",
+   "serviceClasses": [
+    "R",
+    "F",
+    "J",
+    "Y"
+   ],
+   "trafficRestrictions": [],
+   "codeshares": [],
+   "referenceCode": "177-1840519--"
+  },
+  {
+   "carrierFsCode": "SU",
+   "flightNumber": "6330",
+   "departureAirportFsCode": "KGD",
+   "arrivalAirportFsCode": "LED",
+   "stops": 0,
+   "arrivalTerminal": "1",
+   "departureTime": "2017-07-06T20:00:00.000",
+   "arrivalTime": "2017-07-06T22:25:00.000",
+   "flightEquipmentIataCode": "319",
+   "isCodeshare": false,
+   "isWetlease": true,
+   "serviceType": "J",
+   "serviceClasses": [
+    "R",
+    "F",
+    "J",
+    "Y"
+   ],
+   "trafficRestrictions": [],
+   "codeshares": [],
+   "wetleaseOperatorFsCode": "FV",
+   "referenceCode": "177-1840572--"
+  },
+  {
+   "carrierFsCode": "SU",
+   "flightNumber": "1007",
+   "departureAirportFsCode": "KGD",
+   "arrivalAirportFsCode": "SVO",
+   "stops": 0,
+   "arrivalTerminal": "D",
+   "departureTime": "2017-07-06T20:30:00.000",
+   "arrivalTime": "2017-07-06T23:20:00.000",
+   "flightEquipmentIataCode": "73H",
+   "isCodeshare": false,
+   "isWetlease": false,
+   "serviceType": "J",
+   "serviceClasses": [
+    "R",
+    "F",
+    "J",
+    "Y"
+   ],
+   "trafficRestrictions": [],
+   "codeshares": [],
+   "referenceCode": "177-1840669--"
+  }
+ ],
+ "appendix": {
+  "airlines": [
+   {
+    "fs": "SU",
+    "iata": "SU",
+    "icao": "AFL",
+    "name": "Aeroflot",
+    "phoneNumber": "+7 495 223-55-55",
+    "active": true
+   },
+   {
+    "fs": "FV",
+    "iata": "FV",
+    "icao": "SDM",
+    "name": "Rossiya Airlines",
+    "phoneNumber": "+812 333-22-22",
+    "active": true
+   },
+   {
+    "fs": "5N",
+    "iata": "5N",
+    "icao": "AUL",
+    "name": "Nordavia Regional Airlines",
+    "active": true
+   }
+  ],
+  "airports": [
+   {
+    "fs": "KGD",
+    "iata": "KGD",
+    "icao": "UMKK",
+    "name": "Khrabrovo Airport",
+    "city": "Kaliningrad",
+    "cityCode": "KGD",
+    "countryCode": "RU",
+    "countryName": "Russian Federation",
+    "regionName": "Europe",
+    "timeZoneRegionName": "Europe/Kaliningrad",
+    "localTime": "2017-07-06T20:16:20.627",
+    "utcOffsetHours": 2,
+    "latitude": 54.882656,
+    "longitude": 20.586646,
+    "elevationFeet": 43,
+    "classification": 4,
+    "active": true
+   },
+   {
+    "fs": "LED",
+    "iata": "LED",
+    "icao": "ULLI",
+    "name": "Pulkovo Airport",
+    "city": "Saint Petersburg",
+    "cityCode": "LED",
+    "countryCode": "RU",
+    "countryName": "Russian Federation",
+    "regionName": "Europe",
+    "timeZoneRegionName": "Europe/Moscow",
+    "localTime": "2017-07-06T21:16:20.660",
+    "utcOffsetHours": 3,
+    "latitude": 59.799847,
+    "longitude": 30.270505,
+    "elevationFeet": 76,
+    "classification": 2,
+    "active": true
+   },
+   {
+    "fs": "SVO",
+    "iata": "SVO",
+    "icao": "UUEE",
+    "name": "Sheremetyevo International Airport",
+    "city": "Moscow",
+    "cityCode": "MOW",
+    "countryCode": "RU",
+    "countryName": "Russian Federation",
+    "regionName": "Europe",
+    "timeZoneRegionName": "Europe/Moscow",
+    "localTime": "2017-07-06T21:16:20.660",
+    "utcOffsetHours": 3,
+    "latitude": 55.966324,
+    "longitude": 37.416574,
+    "elevationFeet": 630,
+    "classification": 1,
+    "active": true
+   },
+   {
+    "fs": "ARH",
+    "iata": "ARH",
+    "icao": "ULAA",
+    "name": "Talagi Airport",
+    "city": "Arkhangelsk",
+    "cityCode": "ARH",
+    "countryCode": "RU",
+    "countryName": "Russian Federation",
+    "regionName": "Europe",
+    "timeZoneRegionName": "Europe/Moscow",
+    "localTime": "2017-07-06T21:16:20.659",
+    "utcOffsetHours": 3,
+    "latitude": 64.597581,
+    "longitude": 40.713989,
+    "elevationFeet": 33,
+    "classification": 4,
+    "active": true
+   },
+   {
+    "fs": "DME",
+    "iata": "DME",
+    "icao": "UUDD",
+    "name": "Moscow Domodedovo Airport",
+    "city": "Moscow",
+    "cityCode": "MOW",
+    "countryCode": "RU",
+    "countryName": "Russian Federation",
+    "regionName": "Europe",
+    "timeZoneRegionName": "Europe/Moscow",
+    "localTime": "2017-07-06T21:16:20.660",
+    "utcOffsetHours": 3,
+    "latitude": 55.414566,
+    "longitude": 37.899494,
+    "elevationFeet": 587,
+    "classification": 1,
+    "active": true
+   }
+  ],
+  "equipments": [
+   {
+    "iata": "73H",
+    "name": "Boeing 737-800 (winglets) Passenger/BBJ2",
+    "turboProp": false,
+    "jet": true,
+    "widebody": false,
+    "regional": false
+   },
+   {
+    "iata": "735",
+    "name": "Boeing 737-500 Passenger",
+    "turboProp": false,
+    "jet": true,
+    "widebody": false,
+    "regional": false
+   },
+   {
+    "iata": "319",
+    "name": "Airbus A319",
+    "turboProp": false,
+    "jet": true,
+    "widebody": false,
+    "regional": false
+   }
+  ]
+ }
+}

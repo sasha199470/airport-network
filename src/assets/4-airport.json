@@ -1,0 +1,676 @@
+{
+  "request": {
+    "airport": {
+      "requestedCode": "LED",
+      "fsCode": "LED"
+    },
+    "codeType": {
+      "requested": "FS",
+      "interpreted": "FS"
+    },
+    "departing": true,
+    "date": {
+      "year": "2017",
+      "month": "7",
+      "day": "6",
+      "interpreted": "2017-07-06"
+    },
+    "hourOfDay": {
+      "requested": "21",
+      "interpreted": 21
+    },
+    "url": "https://api.flightstats.com/flex/schedules/rest/v1/json/from/LED/departing/2017/7/6/21"
+  },
+  "scheduledFlights": [
+    {
+      "carrierFsCode": "KC",
+      "flightNumber": "136",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "ALA",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:40:00.000",
+      "arrivalTime": "2017-07-07T05:45:00.000",
+      "flightEquipmentIataCode": "320",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "referenceCode": "178-2067461--"
+    },
+    {
+      "carrierFsCode": "D2",
+      "flightNumber": "22",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "CEE",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:45:00.000",
+      "arrivalTime": "2017-07-06T22:35:00.000",
+      "flightEquipmentIataCode": "CR2",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "referenceCode": "178-2067923--"
+    },
+    {
+      "carrierFsCode": "S7",
+      "flightNumber": "22",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "DME",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:20:00.000",
+      "arrivalTime": "2017-07-06T22:50:00.000",
+      "flightEquipmentIataCode": "E70",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [
+        {
+          "carrierFsCode": "EK",
+          "flightNumber": "7964",
+          "serviceType": "J",
+          "serviceClasses": [
+            "R",
+            "F",
+            "J",
+            "Y"
+          ],
+          "trafficRestrictions": [
+            "Y"
+          ],
+          "referenceCode": 2068018
+        }
+      ],
+      "referenceCode": "178-2068128--"
+    },
+    {
+      "carrierFsCode": "EK",
+      "flightNumber": "7964",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "DME",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:20:00.000",
+      "arrivalTime": "2017-07-06T22:50:00.000",
+      "flightEquipmentIataCode": "E70",
+      "isCodeshare": true,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [
+        "Y"
+      ],
+      "operator": {
+        "carrierFsCode": "S7",
+        "flightNumber": "22",
+        "serviceType": "J",
+        "serviceClasses": [
+          "R",
+          "F",
+          "J",
+          "Y"
+        ],
+        "trafficRestrictions": []
+      },
+      "codeshares": [],
+      "referenceCode": "178-2068128--2068018"
+    },
+    {
+      "carrierFsCode": "S7",
+      "flightNumber": "24",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "DME",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:25:00.000",
+      "arrivalTime": "2017-07-06T22:55:00.000",
+      "flightEquipmentIataCode": "319",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [
+        {
+          "carrierFsCode": "EK",
+          "flightNumber": "7864",
+          "serviceType": "J",
+          "serviceClasses": [
+            "R",
+            "F",
+            "J",
+            "Y"
+          ],
+          "trafficRestrictions": [
+            "Y"
+          ],
+          "referenceCode": 2068022
+        },
+        {
+          "carrierFsCode": "LY",
+          "flightNumber": "8880",
+          "serviceType": "J",
+          "serviceClasses": [
+            "Y"
+          ],
+          "trafficRestrictions": [
+            "O"
+          ],
+          "referenceCode": 2068041
+        },
+        {
+          "carrierFsCode": "TP",
+          "flightNumber": "8135",
+          "serviceType": "J",
+          "serviceClasses": [
+            "F",
+            "J",
+            "Y"
+          ],
+          "trafficRestrictions": [
+            "O"
+          ],
+          "referenceCode": 2068147
+        },
+        {
+          "carrierFsCode": "A3",
+          "flightNumber": "3585",
+          "serviceType": "J",
+          "serviceClasses": [
+            "F",
+            "Y"
+          ],
+          "trafficRestrictions": [
+            "G"
+          ],
+          "referenceCode": 10888655
+        }
+      ],
+      "referenceCode": "178-2068077--"
+    },
+    {
+      "carrierFsCode": "EK",
+      "flightNumber": "7864",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "DME",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:25:00.000",
+      "arrivalTime": "2017-07-06T22:55:00.000",
+      "flightEquipmentIataCode": "319",
+      "isCodeshare": true,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [
+        "Y"
+      ],
+      "operator": {
+        "carrierFsCode": "S7",
+        "flightNumber": "24",
+        "serviceType": "J",
+        "serviceClasses": [
+          "R",
+          "F",
+          "J",
+          "Y"
+        ],
+        "trafficRestrictions": []
+      },
+      "codeshares": [],
+      "referenceCode": "178-2068077--2068022"
+    },
+    {
+      "carrierFsCode": "LY",
+      "flightNumber": "8880",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "DME",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:25:00.000",
+      "arrivalTime": "2017-07-06T22:55:00.000",
+      "flightEquipmentIataCode": "319",
+      "isCodeshare": true,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "Y"
+      ],
+      "trafficRestrictions": [
+        "O"
+      ],
+      "operator": {
+        "carrierFsCode": "S7",
+        "flightNumber": "24",
+        "serviceType": "J",
+        "serviceClasses": [
+          "R",
+          "F",
+          "J",
+          "Y"
+        ],
+        "trafficRestrictions": []
+      },
+      "codeshares": [],
+      "referenceCode": "178-2068077--2068041"
+    },
+    {
+      "carrierFsCode": "TP",
+      "flightNumber": "8135",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "DME",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:25:00.000",
+      "arrivalTime": "2017-07-06T22:55:00.000",
+      "flightEquipmentIataCode": "319",
+      "isCodeshare": true,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [
+        "O"
+      ],
+      "operator": {
+        "carrierFsCode": "S7",
+        "flightNumber": "24",
+        "serviceType": "J",
+        "serviceClasses": [
+          "R",
+          "F",
+          "J",
+          "Y"
+        ],
+        "trafficRestrictions": []
+      },
+      "codeshares": [],
+      "referenceCode": "178-2068077--2068147"
+    },
+    {
+      "carrierFsCode": "A3",
+      "flightNumber": "3585",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "DME",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:25:00.000",
+      "arrivalTime": "2017-07-06T22:55:00.000",
+      "flightEquipmentIataCode": "319",
+      "isCodeshare": true,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "F",
+        "Y"
+      ],
+      "trafficRestrictions": [
+        "G"
+      ],
+      "operator": {
+        "carrierFsCode": "S7",
+        "flightNumber": "24",
+        "serviceType": "J",
+        "serviceClasses": [
+          "R",
+          "F",
+          "J",
+          "Y"
+        ],
+        "trafficRestrictions": []
+      },
+      "codeshares": [],
+      "referenceCode": "178-2068077--10888655"
+    },
+    {
+      "carrierFsCode": "SU",
+      "flightNumber": "6471",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "OMS",
+      "stops": 0,
+      "departureTerminal": "1",
+      "departureTime": "2017-07-06T21:35:00.000",
+      "arrivalTime": "2017-07-07T04:15:00.000",
+      "flightEquipmentIataCode": "319",
+      "isCodeshare": false,
+      "isWetlease": true,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "wetleaseOperatorFsCode": "FV",
+      "referenceCode": "178-2068877--"
+    },
+    {
+      "carrierFsCode": "SU",
+      "flightNumber": "6035",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "VKO",
+      "stops": 0,
+      "departureTerminal": "1",
+      "arrivalTerminal": "A",
+      "departureTime": "2017-07-06T21:55:00.000",
+      "arrivalTime": "2017-07-06T23:20:00.000",
+      "flightEquipmentIataCode": "319",
+      "isCodeshare": false,
+      "isWetlease": true,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "wetleaseOperatorFsCode": "FV",
+      "referenceCode": "178-2069749--"
+    },
+    {
+      "carrierFsCode": "UT",
+      "flightNumber": "384",
+      "departureAirportFsCode": "LED",
+      "arrivalAirportFsCode": "VKO",
+      "stops": 0,
+      "departureTerminal": "1",
+      "arrivalTerminal": "A",
+      "departureTime": "2017-07-06T21:30:00.000",
+      "arrivalTime": "2017-07-06T23:00:00.000",
+      "flightEquipmentIataCode": "735",
+      "isCodeshare": false,
+      "isWetlease": false,
+      "serviceType": "J",
+      "serviceClasses": [
+        "R",
+        "F",
+        "J",
+        "Y"
+      ],
+      "trafficRestrictions": [],
+      "codeshares": [],
+      "referenceCode": "178-2069773--"
+    }
+  ],
+  "appendix": {
+    "airlines": [
+      {
+        "fs": "SU",
+        "iata": "SU",
+        "icao": "AFL",
+        "name": "Aeroflot",
+        "phoneNumber": "+7 495 223-55-55",
+        "active": true
+      },
+      {
+        "fs": "S7",
+        "iata": "S7",
+        "icao": "SBI",
+        "name": "S7 Airlines",
+        "phoneNumber": "8-800-200-000-7",
+        "active": true
+      },
+      {
+        "fs": "EK",
+        "iata": "EK",
+        "icao": "UAE",
+        "name": "Emirates",
+        "phoneNumber": "800 777 3999",
+        "active": true
+      },
+      {
+        "fs": "LY",
+        "iata": "LY",
+        "icao": "ELY",
+        "name": "El Al",
+        "phoneNumber": "+ 972-3-9771111",
+        "active": true
+      },
+      {
+        "fs": "D2",
+        "iata": "D2",
+        "icao": "SSF",
+        "name": "Severstal Aircompany",
+        "active": true
+      },
+      {
+        "fs": "FV",
+        "iata": "FV",
+        "icao": "SDM",
+        "name": "Rossiya Airlines",
+        "phoneNumber": "+812 333-22-22",
+        "active": true
+      },
+      {
+        "fs": "A3",
+        "iata": "A3",
+        "icao": "AEE",
+        "name": "Aegean Airlines",
+        "phoneNumber": "+30 210 6261000",
+        "active": true
+      },
+      {
+        "fs": "KC",
+        "iata": "KC",
+        "icao": "KZR",
+        "name": "Air Astana",
+        "active": true
+      },
+      {
+        "fs": "TP",
+        "iata": "TP",
+        "icao": "TAP",
+        "name": "TAP Portugal",
+        "phoneNumber": "800 221-7370",
+        "active": true
+      },
+      {
+        "fs": "UT",
+        "iata": "UT",
+        "icao": "UTA",
+        "name": "UTair",
+        "active": true
+      }
+    ],
+    "airports": [
+      {
+        "fs": "CEE",
+        "iata": "CEE",
+        "name": "Cherepovets Airport",
+        "city": "Cherepovets",
+        "cityCode": "CEE",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:21:41.725",
+        "utcOffsetHours": 3,
+        "latitude": 59.283333,
+        "longitude": 38.066667,
+        "elevationFeet": 0,
+        "classification": 4,
+        "active": true
+      },
+      {
+        "fs": "LED",
+        "iata": "LED",
+        "icao": "ULLI",
+        "name": "Pulkovo Airport",
+        "city": "Saint Petersburg",
+        "cityCode": "LED",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:21:41.720",
+        "utcOffsetHours": 3,
+        "latitude": 59.799847,
+        "longitude": 30.270505,
+        "elevationFeet": 76,
+        "classification": 2,
+        "active": true
+      },
+      {
+        "fs": "OMS",
+        "iata": "OMS",
+        "icao": "UNOO",
+        "name": "Omsk Airport",
+        "city": "Omsk",
+        "cityCode": "OMS",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Asia/Omsk",
+        "localTime": "2017-07-08T00:21:41.725",
+        "utcOffsetHours": 6,
+        "latitude": 54.957455,
+        "longitude": 73.316707,
+        "elevationFeet": 312,
+        "classification": 4,
+        "active": true
+      },
+      {
+        "fs": "ALA",
+        "iata": "ALA",
+        "icao": "UAAA",
+        "name": "Almaty Airport",
+        "city": "Almaty",
+        "cityCode": "ALA",
+        "countryCode": "KZ",
+        "countryName": "Kazakhstan",
+        "regionName": "Asia",
+        "timeZoneRegionName": "Asia/Qyzylorda",
+        "localTime": "2017-07-08T00:21:41.725",
+        "utcOffsetHours": 6,
+        "latitude": 43.346652,
+        "longitude": 77.011455,
+        "elevationFeet": 2234,
+        "classification": 3,
+        "active": true
+      },
+      {
+        "fs": "VKO",
+        "iata": "VKO",
+        "icao": "UUWW",
+        "name": "Vnukovo Airport",
+        "city": "Moscow",
+        "cityCode": "MOW",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:21:41.725",
+        "utcOffsetHours": 3,
+        "latitude": 55.60315,
+        "longitude": 37.292098,
+        "elevationFeet": 686,
+        "classification": 2,
+        "active": true
+      },
+      {
+        "fs": "DME",
+        "iata": "DME",
+        "icao": "UUDD",
+        "name": "Moscow Domodedovo Airport",
+        "city": "Moscow",
+        "cityCode": "MOW",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:21:41.725",
+        "utcOffsetHours": 3,
+        "latitude": 55.414566,
+        "longitude": 37.899494,
+        "elevationFeet": 587,
+        "classification": 1,
+        "active": true
+      }
+    ],
+    "equipments": [
+      {
+        "iata": "CR2",
+        "name": "Canadair (Bombardier) Regional Jet 200",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": true
+      },
+      {
+        "iata": "320",
+        "name": "Airbus A320",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": false
+      },
+      {
+        "iata": "735",
+        "name": "Boeing 737-500 Passenger",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": false
+      },
+      {
+        "iata": "319",
+        "name": "Airbus A319",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": false
+      },
+      {
+        "iata": "E70",
+        "name": "Embraer 170",
+        "turboProp": false,
+        "jet": true,
+        "widebody": false,
+        "regional": true
+      }
+    ]
+  }
+}

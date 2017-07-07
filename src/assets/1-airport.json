@@ -1,0 +1,47 @@
+{
+  "request": {
+    "airport": {
+      "requestedCode": "VLK",
+      "fsCode": "VLK"
+    },
+    "codeType": {
+      "requested": "FS",
+      "interpreted": "FS"
+    },
+    "departing": true,
+    "date": {
+      "year": "2017",
+      "month": "7",
+      "day": "6",
+      "interpreted": "2017-07-06"
+    },
+    "hourOfDay": {
+      "requested": "21",
+      "interpreted": 21
+    },
+    "url": "https://api.flightstats.com/flex/schedules/rest/v1/json/from/VLK/departing/2017/7/6/21"
+  },
+  "scheduledFlights": [],
+  "appendix": {
+    "airports": [
+      {
+        "fs": "VLK",
+        "iata": "VLK",
+        "name": "Volgodonsk Airport",
+        "city": "Volgodonsk",
+        "cityCode": "VLK",
+        "countryCode": "RU",
+        "countryName": "Russian Federation",
+        "regionName": "Europe",
+        "timeZoneRegionName": "Europe/Moscow",
+        "localTime": "2017-07-07T21:07:24.336",
+        "utcOffsetHours": 3,
+        "latitude": 47.683333,
+        "longitude": 42.083333,
+        "elevationFeet": 0,
+        "classification": 5,
+        "active": true
+      }
+    ]
+  }
+}
