@@ -1,0 +1,10 @@
+{
+  "/flex/*": {
+    "target": "https://api.flightstats.com",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug"
+  }
+}
+
+
