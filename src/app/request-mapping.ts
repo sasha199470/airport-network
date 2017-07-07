@@ -17,8 +17,8 @@ export abstract class RequestMapping {
                                     RequestMapping.appParams;
 
   private static readonly schedules = RequestMapping.commonUrl + '/schedules/rest/v1/json/from/';
-  public static getFlight(departureAirportFS: string,
-                   date: Date) : string {
+  public static getFlights(departureAirportFS: string,
+                           date: Date) : string {
     let path = [departureAirportFS,
                 'departing',
                 date.getUTCFullYear(),
