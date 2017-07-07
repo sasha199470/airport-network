@@ -10,4 +10,5 @@ export class Airport {
   latitude: number;
   longitude: number;
   utcOffsetHours: number;
+  active: string;
 }
