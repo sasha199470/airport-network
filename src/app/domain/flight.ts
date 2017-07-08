@@ -5,9 +5,11 @@ import {Airport} from './airport';
 export class Flight {
   flightNumber: string;
   aircraftName: string;
-  departureTime: number;
-  arrivalTime: number;
+  departureTime: string;
+  arrivalTime: string;
   departureAirport: Airport;
   arrivalAirport: Airport;
   timeLeft: number;
+  timeTravel: number;
+  marker: google.maps.Marker;
 }
