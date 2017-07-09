@@ -6,10 +6,13 @@ import {HttpModule} from "@angular/http";
 import {AirportsService} from "./service/airports.service";
 import {FlightService} from "./service/flight.service";
 import {AgmCoreModule} from "@agm/core";
+import {MapComponent} from "./components/map/map.component";
+import {FlightsObservable} from "./flights-observable";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import {AgmCoreModule} from "@agm/core";
   ],
   providers: [
     AirportsService,
-    FlightService
+    FlightService,
+    FlightsObservable
   ],
   bootstrap: [AppComponent]
 })
