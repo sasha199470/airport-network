@@ -1,0 +1,34 @@
+<div class="list-flights">
+  <div class="card"
+       *ngFor="let flight of flights; let i = index"
+       (click)="selectFlight(flight)"
+  [class.select]="checkSelect(i)">
+    <div class="line">
+      <span>Номер рейса:</span>
+      <span>{{flight.flightNumber}}</span>
+    </div>
+    <div class="line-min">
+      <span>Название самолета:</span>
+      <span>{{flight.aircraftName}}</span>
+    </div>
+    <div class="line">
+      <span>{{flight.departureAirport.city}}</span>
+      <span>{{flight.departureTime}}</span>
+    </div>
+    <div class="line">
+      <span class="arrow-down"></span>
+    </div>
+    <div class="line">
+      <span>{{flight.arrivalAirport.city}}</span>
+      <span>{{flight.arrivalTime}}</span>
+    </div>
+    <div class="line">
+      <span>Время полета:</span>
+      <span>{{getTimeUTC(flight.timeTravel)}}</span>
+    </div>
+    <div class="line">
+      <span>Время до прилета:</span>
+      <span>{{getTimeUTC(flight.timeLeft)}}</span>
+    </div>
+  </div>
+</div>

@@ -29,6 +29,7 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let selectFlight: Flight = new Flight();
     this.mapsAPILoader.load().then(() => {
       let map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
@@ -81,6 +82,12 @@ export class MapComponent implements OnInit {
 
           marker.addListener('click', () => {
             geodesicPoly.setPath(path);
+            let icon = (flight.marker.getIcon() as google.maps.Symbol);
+            icon.fillColor = 'green';
+            icon.rotation = heading - this.ORIGINE_ROTATION;
+            flight.marker.setIcon(icon);
+            aircraftImage.fillColor = 'black';
+            this.flightsObservable.selectFlightEmit(flight);
           });
 
           flight.marker = marker;
@@ -97,7 +104,7 @@ export class MapComponent implements OnInit {
           flight.marker = undefined;
           let index = this.flights.findIndex((f) => f === flight);
           this.flights.splice(index, 1);
-          this.removeFlight.emit();
+          this.removeFlight.emit(index);
         }
         else {
           let path = getPath(flight);
@@ -109,9 +116,15 @@ export class MapComponent implements OnInit {
           let heading = google.maps.geometry.spherical
             .computeHeading(interpolate, path[1]);
 
-          aircraftImage.rotation = heading - this.ORIGINE_ROTATION;
-          flight.marker.setIcon(aircraftImage);
+          // aircraftImage.rotation =
+          let icon = (flight.marker.getIcon() as google.maps.Symbol);
+          icon.rotation = heading - this.ORIGINE_ROTATION;
+          flight.marker.setIcon(icon);
         }
+      });
+
+      this.flightsObservable.selectFlightEmitted.subscribe(flight => {
+        geodesicPoly.setPath(getPath(flight));
       });
 
       this.mapLoad.emit();

@@ -8,11 +8,13 @@ import {FlightService} from "./service/flight.service";
 import {AgmCoreModule} from "@agm/core";
 import {MapComponent} from "./components/map/map.component";
 import {FlightsObservable} from "./flights-observable";
+import {PanelComponent} from "./components/panel/panel.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,

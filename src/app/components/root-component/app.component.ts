@@ -6,6 +6,7 @@ import {} from '@types/googlemaps';
 import {FlightsObservable} from "../../flights-observable";
 import {Airport} from "../../domain/airport";
 import {Mutex} from "../../semaphore";
+import {Flight} from "../../domain/flight";
 
 declare let google: any;
 
@@ -25,6 +26,7 @@ export class AppComponent implements OnInit {
 
   flightCount = 0;
   airports: Airport[] = [];
+  flights: Flight[] = []
 
   requestMutex = new Mutex();
 
@@ -60,13 +62,17 @@ export class AppComponent implements OnInit {
       this.flightCount += flights.length;
       this.flightsObservable.addFlightsEmit(flights);
 
+      flights.forEach(flight => {
+        this.flights.push(flight);
+      });
       if (this.flightCount > this.MAX_AIRCRAFT_ON_MAP) break;
     }
 
     this.lastRequestTime = new Date().getHours();
   }
 
-  async addFlights() {
+  async checkNumberFlights(index) {
+    this.flights.splice(index, 1);
     this.flightCount--;
     let release = await this.requestMutex.acquire();
     if (this.flightCount >= this.MAX_AIRCRAFT_ON_MAP) {

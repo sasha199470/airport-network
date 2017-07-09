@@ -4,7 +4,7 @@ import {isUndefined} from "util";
 
 export class FlightsManager {
 
-  private readonly TIME_INTERVAL = 600000;
+  private readonly TIME_INTERVAL = 1000;
 
   constructor(private flightsObservable: FlightsObservable) {}
 

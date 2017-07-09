@@ -24,4 +24,12 @@ export class FlightsObservable {
   changePositionEmit(flight: Flight) {
     this.positionFlight.next(flight);
   }
+
+  private selectFlight = new Subject<Flight>();
+
+  selectFlightEmitted = this.selectFlight.asObservable();
+
+  selectFlightEmit(flight: Flight) {
+    this.selectFlight.next(flight);
+  }
 }
