@@ -4,6 +4,7 @@ import {Flight} from "../../domain/flight";
 import {MapsAPILoader} from "@agm/core";
 import {} from '@types/googlemaps';
 import {FlightsObservable} from "../../flights-observable";
+import {FlightsManager} from "../../flights-manager";
 
 declare let google: any;
 
@@ -20,6 +21,7 @@ export class MapComponent implements OnInit {
   @Output('mapLoad') mapLoad = new EventEmitter();
 
   flights: Flight[] = [];
+  flightsManager = new FlightsManager(this.flightsObservable);
 
   constructor(private mapsAPILoader: MapsAPILoader,
               private flightsObservable: FlightsObservable) {
@@ -52,10 +54,7 @@ export class MapComponent implements OnInit {
 
       this.flightsObservable.flightsNumberEmitted.subscribe((flights) => {
         flights.forEach((flight) => {
-          let departure = new google.maps.LatLng(flight.departureAirport.latitude,
-            flight.departureAirport.longitude);
-          let arrival = new google.maps.LatLng(flight.arrivalAirport.latitude,
-            flight.arrivalAirport.longitude);
+          let path = getPath(flight);
 
           flight.timeTravel = Date.parse(flight.arrivalTime) - Date.parse(flight.departureTime) +
             (flight.departureAirport.utcOffsetHours - flight.arrivalAirport.utcOffsetHours) *
@@ -66,10 +65,10 @@ export class MapComponent implements OnInit {
             flight.arrivalAirport.utcOffsetHours * this.HOUR_TO_MS;
 
           let interpolate = google.maps.geometry.spherical
-            .interpolate(departure, arrival, flight.timeLeft / flight.timeTravel);
+            .interpolate(path[0], path[1], 1 - flight.timeLeft / flight.timeTravel);
 
           let heading = google.maps.geometry.spherical
-            .computeHeading(interpolate, arrival);
+            .computeHeading(interpolate, path[1]);
 
           aircraftImage.rotation = heading - this.ORIGINE_ROTATION;
 
@@ -80,15 +79,46 @@ export class MapComponent implements OnInit {
           });
 
           marker.addListener('click', () => {
-            geodesicPoly.setPath([departure, arrival]);
+            geodesicPoly.setPath(path);
           });
 
           flight.marker = marker;
         });
-        flights.forEach((flight) => this.flights.push(flight));
+        flights.forEach((flight) => {
+          this.flightsManager.startFlights(flight);
+          this.flights.push(flight)
+        });
+      });
+
+      this.flightsObservable.flightPositionEmitted.subscribe((flight) => {
+        if (flight.timeLeft <= 0) {
+          flight.marker.setMap(null);
+          flight.marker = undefined;
+        }
+        else {
+          let path = getPath(flight);
+
+          let interpolate = google.maps.geometry.spherical
+            .interpolate(path[0], path[1], 1 - flight.timeLeft / flight.timeTravel);
+          flight.marker.setPosition(interpolate);
+
+          let heading = google.maps.geometry.spherical
+            .computeHeading(interpolate, path[1]);
+
+          aircraftImage.rotation = heading - this.ORIGINE_ROTATION;
+          flight.marker.setIcon(aircraftImage);
+        }
       });
 
       this.mapLoad.emit();
+
+      function getPath(flight) {
+        let departure = new google.maps.LatLng(flight.departureAirport.latitude,
+          flight.departureAirport.longitude);
+        let arrival = new google.maps.LatLng(flight.arrivalAirport.latitude,
+          flight.arrivalAirport.longitude);
+        return [departure, arrival];
+      }
     });
   }
 }
