@@ -19,6 +19,7 @@ export class MapComponent implements OnInit {
   readonly ORIGINE_ROTATION = 45;
 
   @Output('mapLoad') mapLoad = new EventEmitter();
+  @Output('removeFlight') removeFlight = new EventEmitter();
 
   flights: Flight[] = [];
   flightsManager = new FlightsManager(this.flightsObservable);
@@ -94,6 +95,9 @@ export class MapComponent implements OnInit {
         if (flight.timeLeft <= 0) {
           flight.marker.setMap(null);
           flight.marker = undefined;
+          let index = this.flights.findIndex((f) => f === flight);
+          this.flights.splice(index, 1);
+          this.removeFlight.emit();
         }
         else {
           let path = getPath(flight);

@@ -4,6 +4,8 @@ import 'rxjs/add/operator/toPromise';
 import {FlightService} from "../../service/flight.service";
 import {} from '@types/googlemaps';
 import {FlightsObservable} from "../../flights-observable";
+import {Airport} from "../../domain/airport";
+import {Mutex} from "../../semaphore";
 
 declare let google: any;
 
@@ -17,6 +19,14 @@ export class AppComponent implements OnInit {
   readonly HOUR_TO_MS = 3600000;
   readonly ORIGINE_ROTATION = 45;
   readonly MAX_AIRCRAFT_ON_MAP = 20;
+
+  lastRequestTime = 0;
+  lastRequestAirport = -1;
+
+  flightCount = 0;
+  airports: Airport[] = [];
+
+  requestMutex = new Mutex();
 
   constructor(private airportsService: AirportsService,
               private flightService: FlightService,
@@ -37,16 +47,38 @@ export class AppComponent implements OnInit {
   }
 
   async getFlights(): Promise<void> {
-    let flightCount = 0;
-    let airports = await this.airportsService.getDummyAirports();
-    for (let i = 0; i <= 5; i++) {
-      if (!airports[i].active) continue;
+    if (this.airports.length == 0) {
+      this.airports = await this.airportsService.getDummyAirports();
+    }
+    for (let i = this.lastRequestAirport + 1; i <= 6; i++) {
+      this.lastRequestAirport = i;
+      // let localTime = new Date(this.airports[i].localTime).getHours();
+      // if (localTime < 12 || localTime > 22) continue;
 
-      let flights = await this.flightService.getDummyFlights(i, airports[i]);
-      flightCount += flights.length;
+      console.log(i);
+      let flights = await this.flightService.getDummyFlights(i, this.airports[i]);
+      this.flightCount += flights.length;
       this.flightsObservable.addFlightsEmit(flights);
 
-      if (flightCount > this.MAX_AIRCRAFT_ON_MAP) break;
+      if (this.flightCount > this.MAX_AIRCRAFT_ON_MAP) break;
+    }
+
+    this.lastRequestTime = new Date().getHours();
+  }
+
+  async addFlights() {
+    this.flightCount--;
+    let release = await this.requestMutex.acquire();
+    if (this.flightCount >= this.MAX_AIRCRAFT_ON_MAP) {
+      release();
+    }
+    else {
+      if (new Date().getHours() != this.lastRequestTime) {
+        this.lastRequestTime = new Date().getHours();
+        this.lastRequestAirport = -1;
+      }
+      await this.getFlights();
+      release();
     }
   }
 }

@@ -6,9 +6,7 @@ export class Airport {
   name: string;
   countryName: string;
   city: string;
-  localTime: string;
   latitude: number;
   longitude: number;
   utcOffsetHours: number;
-  active: string;
 }

@@ -126,6 +126,27 @@
       "delayIndexUrl": "https://api.flightstats.com/flex/delayindex/rest/v1/json/airports/KZN?codeType=fs"
     },
     {
+      "fs": "KGD",
+      "iata": "KGD",
+      "icao": "UMKK",
+      "name": "Khrabrovo Airport",
+      "city": "Kaliningrad",
+      "cityCode": "KGD",
+      "countryCode": "RU",
+      "countryName": "Russian Federation",
+      "regionName": "Europe",
+      "timeZoneRegionName": "Europe/Kaliningrad",
+      "localTime": "2017-07-05T22:54:25.714",
+      "utcOffsetHours": 2,
+      "latitude": 54.882656,
+      "longitude": 20.586646,
+      "elevationFeet": 43,
+      "classification": 4,
+      "active": true,
+      "weatherUrl": "https://api.flightstats.com/flex/weather/rest/v1/json/all/KGD?codeType=fs",
+      "delayIndexUrl": "https://api.flightstats.com/flex/delayindex/rest/v1/json/airports/KGD?codeType=fs"
+    },
+    {
       "fs": "CEE",
       "iata": "CEE",
       "name": "Cherepovets Airport",
