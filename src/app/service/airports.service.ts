@@ -3,7 +3,7 @@
  */
 
 import {Injectable} from "@angular/core";
-import {Headers, Http} from "@angular/http";
+import {Headers, Http, Jsonp} from "@angular/http";
 import {RequestMapping} from "../request-mapping";
 import {Airport} from "../domain/airport";
 
@@ -13,13 +13,16 @@ import 'rxjs/add/operator/toPromise';
 export class AirportsService {
   private headers = new Headers({'Content-Type': 'application/json'});
 
-  constructor(private http: Http) {}
+  constructor(private http: Http, private jsonp: Jsonp) {}
 
   getAirports() : Promise<Airport[]> {
-    return this.http
+    return this.jsonp
       .get(RequestMapping.airports, {headers: this.headers})
       .toPromise()
-      .then(response => <Airport[]> response.json()['airports']);
+      .then(response => {
+        console.log(response.json());
+        return <Airport[]> response.json()
+      });
   }
 
   getDummyAirports() : Promise<Airport[]> {

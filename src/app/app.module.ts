@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './components/root-component/app.component';
-import {HttpModule} from "@angular/http";
+import {HttpModule, JsonpModule} from "@angular/http";
 import {AirportsService} from "./service/airports.service";
 import {FlightService} from "./service/flight.service";
 import {AgmCoreModule} from "@agm/core";
@@ -19,6 +19,7 @@ import {PanelComponent} from "./components/panel/panel.component";
   imports: [
     BrowserModule,
     HttpModule,
+    JsonpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD01xktvdR-kU-0JZfriefkdB-TPMJCqSo',
       libraries: ["geometry"]
