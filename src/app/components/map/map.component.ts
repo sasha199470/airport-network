@@ -65,9 +65,8 @@ export class MapComponent implements OnInit {
             (flight.departureAirport.utcOffsetHours - flight.arrivalAirport.utcOffsetHours) *
             this.HOUR_TO_MS;
 
-          //TODO: поменять Date.parse('2017-07-06T19:16:20.627') на Date.now()
-          flight.timeLeft = Date.parse(flight.arrivalTime) - Date.parse('2017-07-06T19:16:20.627') -
-            flight.arrivalAirport.utcOffsetHours * this.HOUR_TO_MS;
+          flight.timeLeft = Date.parse(flight.arrivalTime) - Date.now() -
+            (flight.arrivalAirport.utcOffsetHours + new Date().getTimezoneOffset() / 60) * this.HOUR_TO_MS;
 
           let interpolate = google.maps.geometry.spherical
             .interpolate(path[0], path[1], 1 - flight.timeLeft / flight.timeTravel);
@@ -80,7 +79,8 @@ export class MapComponent implements OnInit {
           let marker = new google.maps.Marker({
             map: map,
             position: interpolate,
-            icon: aircraftImage
+            icon: aircraftImage,
+            zIndex: 0
           });
 
           marker.addListener('click', () => {
@@ -122,7 +122,10 @@ export class MapComponent implements OnInit {
 
       this.flightsObservable.selectFlightEmitted.subscribe(flight => {
         let oldSelect = this.flights.find(flight => flight == selectFlight);
-        if (!isUndefined(oldSelect)) changeFillIcon(oldSelect, 'black');
+        if (!isUndefined(oldSelect)) {
+          changeFillIcon(oldSelect, 'black');
+          oldSelect.marker.setZIndex(0);
+        }
         selectAircraft(flight);
       });
 
@@ -151,6 +154,7 @@ export class MapComponent implements OnInit {
         geodesicPoly.setPath(getPath(flight));
         changeFillIcon(flight, 'yellow');
         selectFlight = flight;
+        selectFlight.marker.setZIndex(100);
       }
     })
   }
