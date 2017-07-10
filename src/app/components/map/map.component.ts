@@ -82,11 +82,7 @@ export class MapComponent implements OnInit {
 
           marker.addListener('click', () => {
             geodesicPoly.setPath(path);
-            let icon = (flight.marker.getIcon() as google.maps.Symbol);
-            icon.fillColor = 'green';
-            icon.rotation = heading - this.ORIGINE_ROTATION;
-            flight.marker.setIcon(icon);
-            aircraftImage.fillColor = 'black';
+            changeFillIcon(flight, 'green');
             this.flightsObservable.selectFlightEmit(flight);
           });
 
@@ -102,7 +98,7 @@ export class MapComponent implements OnInit {
         if (flight.timeLeft <= 0) {
           flight.marker.setMap(null);
           flight.marker = undefined;
-          let index = this.flights.findIndex((f) => f === flight);
+          let index = this.flights.findIndex(f => f === flight);
           this.flights.splice(index, 1);
           this.removeFlight.emit(index);
         }
@@ -116,15 +112,13 @@ export class MapComponent implements OnInit {
           let heading = google.maps.geometry.spherical
             .computeHeading(interpolate, path[1]);
 
-          // aircraftImage.rotation =
-          let icon = (flight.marker.getIcon() as google.maps.Symbol);
-          icon.rotation = heading - this.ORIGINE_ROTATION;
-          flight.marker.setIcon(icon);
+          changeRotationIcon(flight, heading - this.ORIGINE_ROTATION);
         }
       });
 
       this.flightsObservable.selectFlightEmitted.subscribe(flight => {
         geodesicPoly.setPath(getPath(flight));
+        changeFillIcon(flight, 'green');
       });
 
       this.mapLoad.emit();
@@ -136,6 +130,17 @@ export class MapComponent implements OnInit {
           flight.arrivalAirport.longitude);
         return [departure, arrival];
       }
-    });
+
+      function changeFillIcon(flight: Flight, fillColor: string) {
+        let icon = (flight.marker.getIcon() as google.maps.Symbol);
+        icon.fillColor = fillColor;
+        flight.marker.setIcon(icon)
+      }
+      function changeRotationIcon(flight: Flight, rotation: number) {
+        let icon = (flight.marker.getIcon() as google.maps.Symbol);
+        icon.rotation = rotation;
+        flight.marker.setIcon(icon)
+      }
+    })
   }
 }
