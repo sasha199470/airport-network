@@ -1,4 +1,4 @@
 <div class="wrapper">
   <panel [flights]="flights"></panel>
-  <map (mapLoad)="startFlights()" (removeFlight)="checkNumberFlights()"></map>
+  <map (mapLoad)="startFlights()" (removeFlight)="checkNumberFlights($event)"></map>
 </div>
