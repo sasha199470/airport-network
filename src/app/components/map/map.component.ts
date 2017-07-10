@@ -5,6 +5,7 @@ import {MapsAPILoader} from "@agm/core";
 import {} from '@types/googlemaps';
 import {FlightsObservable} from "../../flights-observable";
 import {FlightsManager} from "../../flights-manager";
+import {isUndefined} from "util";
 
 declare let google: any;
 
@@ -17,6 +18,8 @@ declare let google: any;
 export class MapComponent implements OnInit {
   readonly HOUR_TO_MS = 3600000;
   readonly ORIGINE_ROTATION = 45;
+
+  readonly SELECT_COLOR = 'yellow';
 
   @Output('mapLoad') mapLoad = new EventEmitter();
   @Output('removeFlight') removeFlight = new EventEmitter();
@@ -81,8 +84,9 @@ export class MapComponent implements OnInit {
           });
 
           marker.addListener('click', () => {
-            geodesicPoly.setPath(path);
-            changeFillIcon(flight, 'green');
+            let oldSelect = this.flights.find(flight => flight == selectFlight);
+            if (!isUndefined(oldSelect)) changeFillIcon(oldSelect, 'black');
+            selectAircraft(flight);
             this.flightsObservable.selectFlightEmit(flight);
           });
 
@@ -117,8 +121,9 @@ export class MapComponent implements OnInit {
       });
 
       this.flightsObservable.selectFlightEmitted.subscribe(flight => {
-        geodesicPoly.setPath(getPath(flight));
-        changeFillIcon(flight, 'green');
+        let oldSelect = this.flights.find(flight => flight == selectFlight);
+        if (!isUndefined(oldSelect)) changeFillIcon(oldSelect, 'black');
+        selectAircraft(flight);
       });
 
       this.mapLoad.emit();
@@ -140,6 +145,12 @@ export class MapComponent implements OnInit {
         let icon = (flight.marker.getIcon() as google.maps.Symbol);
         icon.rotation = rotation;
         flight.marker.setIcon(icon)
+      }
+
+      function selectAircraft(flight: Flight) {
+        geodesicPoly.setPath(getPath(flight));
+        changeFillIcon(flight, 'yellow');
+        selectFlight = flight;
       }
     })
   }
