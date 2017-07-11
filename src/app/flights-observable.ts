@@ -8,27 +8,26 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class FlightsObservable {
 
-  private numberOfFlights = new Subject<Flight[]>();
-
-  flightsNumberEmitted = this.numberOfFlights.asObservable();
-
+  private addFlights = new Subject<Flight[]>();
+  flightsNumberEmitted = this.addFlights.asObservable();
   addFlightsEmit(fligths: Flight[]) {
-    this.numberOfFlights.next(fligths);
+    this.addFlights.next(fligths);
   }
 
+  private deleteFlight = new Subject<Flight>();
+  deleteFlightEmitted = this.deleteFlight.asObservable();
+  deleteFlightEmit(flight: Flight) {
+    this.deleteFlight.next(flight);
+  }
 
   private positionFlight = new Subject<Flight>();
-
   flightPositionEmitted = this.positionFlight.asObservable();
-
   changePositionEmit(flight: Flight) {
     this.positionFlight.next(flight);
   }
 
   private selectFlight = new Subject<Flight>();
-
   selectFlightEmitted = this.selectFlight.asObservable();
-
   selectFlightEmit(flight: Flight) {
     this.selectFlight.next(flight);
   }

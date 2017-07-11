@@ -5,8 +5,8 @@ export abstract class RequestMapping {
 
   private static readonly commonUrl = 'https://api.flightstats.com/flex';
 
-  private static readonly appId = '2f3d54f5';
-  private static readonly appKey = '6490a6a02e6b8f094a2a5baca024fec2';
+  private static readonly appId = 'db6d35a8';
+  private static readonly appKey = 'c39691881edb945ffd48362793d5631e';
   private static readonly appParams = '?appId=' + RequestMapping.appId +
                                       '&appKey=' + RequestMapping.appKey;
 

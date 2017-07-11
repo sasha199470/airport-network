@@ -16,15 +16,8 @@ declare let google: any;
 })
 
 export class MapComponent implements OnInit {
-  readonly HOUR_TO_MS = 3600000;
-  readonly ORIGINE_ROTATION = 45;
-
-  readonly SELECT_COLOR = 'yellow';
-
   @Output('mapLoad') mapLoad = new EventEmitter();
-  @Output('removeFlight') removeFlight = new EventEmitter();
 
-  flights: Flight[] = [];
   flightsManager = new FlightsManager(this.flightsObservable);
 
   constructor(private mapsAPILoader: MapsAPILoader,
@@ -32,8 +25,14 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let selectFlight: Flight = new Flight();
+    let selectedFlight: Flight = new Flight();
     this.mapsAPILoader.load().then(() => {
+      const HOUR_TO_MS = 3600000;
+      const ORIGINE_ROTATION = 45;
+
+      const DEFAULT_COLOR = 'black';
+      const SELECT_COLOR = 'yellow';
+
       let map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
         center: {lat: 54.882656, lng: 20.586646}
@@ -63,10 +62,11 @@ export class MapComponent implements OnInit {
 
           flight.timeTravel = Date.parse(flight.arrivalTime) - Date.parse(flight.departureTime) +
             (flight.departureAirport.utcOffsetHours - flight.arrivalAirport.utcOffsetHours) *
-            this.HOUR_TO_MS;
+            HOUR_TO_MS;
 
           flight.timeLeft = Date.parse(flight.arrivalTime) - Date.now() -
-            (flight.arrivalAirport.utcOffsetHours + new Date().getTimezoneOffset() / 60) * this.HOUR_TO_MS;
+            (flight.arrivalAirport.utcOffsetHours + new Date().getTimezoneOffset() / 60) *
+            HOUR_TO_MS;
 
           let interpolate = google.maps.geometry.spherical
             .interpolate(path[0], path[1], 1 - flight.timeLeft / flight.timeTravel);
@@ -74,7 +74,7 @@ export class MapComponent implements OnInit {
           let heading = google.maps.geometry.spherical
             .computeHeading(interpolate, path[1]);
 
-          aircraftImage.rotation = heading - this.ORIGINE_ROTATION;
+          aircraftImage.rotation = heading - ORIGINE_ROTATION;
 
           let marker = new google.maps.Marker({
             map: map,
@@ -84,17 +84,12 @@ export class MapComponent implements OnInit {
           });
 
           marker.addListener('click', () => {
-            let oldSelect = this.flights.find(flight => flight == selectFlight);
-            if (!isUndefined(oldSelect)) changeFillIcon(oldSelect, 'black');
-            selectAircraft(flight);
+            selectFlight(flight);
             this.flightsObservable.selectFlightEmit(flight);
           });
 
           flight.marker = marker;
-        });
-        flights.forEach((flight) => {
           this.flightsManager.startFlights(flight);
-          this.flights.push(flight)
         });
       });
 
@@ -102,9 +97,7 @@ export class MapComponent implements OnInit {
         if (flight.timeLeft <= 0) {
           flight.marker.setMap(null);
           flight.marker = undefined;
-          let index = this.flights.findIndex(f => f === flight);
-          this.flights.splice(index, 1);
-          this.removeFlight.emit(index);
+          this.flightsObservable.deleteFlightEmit(flight);
         }
         else {
           let path = getPath(flight);
@@ -116,17 +109,12 @@ export class MapComponent implements OnInit {
           let heading = google.maps.geometry.spherical
             .computeHeading(interpolate, path[1]);
 
-          changeRotationIcon(flight, heading - this.ORIGINE_ROTATION);
+          changeRotationIcon(flight, heading - ORIGINE_ROTATION);
         }
       });
 
       this.flightsObservable.selectFlightEmitted.subscribe(flight => {
-        let oldSelect = this.flights.find(flight => flight == selectFlight);
-        if (!isUndefined(oldSelect)) {
-          changeFillIcon(oldSelect, 'black');
-          oldSelect.marker.setZIndex(0);
-        }
-        selectAircraft(flight);
+        selectFlight(flight);
       });
 
       this.mapLoad.emit();
@@ -150,11 +138,16 @@ export class MapComponent implements OnInit {
         flight.marker.setIcon(icon)
       }
 
-      function selectAircraft(flight: Flight) {
+      function selectFlight(flight: Flight) {
+        if (!isUndefined(selectedFlight.marker)) {
+          selectedFlight.marker.setZIndex(1);
+          changeFillIcon(selectedFlight, DEFAULT_COLOR);
+        }
+
         geodesicPoly.setPath(getPath(flight));
-        changeFillIcon(flight, 'yellow');
-        selectFlight = flight;
-        selectFlight.marker.setZIndex(100);
+        changeFillIcon(flight, SELECT_COLOR);
+        selectedFlight = flight;
+        selectedFlight.marker.setZIndex(100);
       }
     })
   }

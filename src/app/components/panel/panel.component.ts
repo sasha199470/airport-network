@@ -13,7 +13,7 @@ import {Flight} from "../../domain/flight";
 
 export class PanelComponent implements OnInit {
 
-  @Input('flights') flights: Flight[] = [];
+  flights: Flight[] = [];
 
   selectIndex = -1;
 
@@ -21,6 +21,16 @@ export class PanelComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.flightsObservable.flightsNumberEmitted.subscribe(flights => {
+      this.flights = this.flights.concat(flights);
+    });
+
+    this.flightsObservable.deleteFlightEmitted.subscribe(flight => {
+      let index = this.flights.findIndex(f => f === flight);
+      this.flights.splice(index, 1);
+    });
+
     this.flightsObservable.selectFlightEmitted.subscribe(flight => {
       this.selectIndex = this.flights.findIndex(f => f.flightNumber == flight.flightNumber);
     });
