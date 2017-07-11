@@ -41,6 +41,7 @@ export class AppComponent implements OnInit {
       this.airports = await this.airportsService.getDummyAirports();
     }
 
+    console.log(this.airports);
     for (let i = 0; i <= this.airports.length - 1; i++) {
       let requestLocalTime = new Date(Date.now() + new Date().getTimezoneOffset() * 60000 +
         (this.airports[i].utcOffsetHours - 1) * this.HOUR_TO_MS);
@@ -50,11 +51,6 @@ export class AppComponent implements OnInit {
       flights = flights.filter((flight, index, array) => {
         if (index == 0 || flight.arrivalAirport.fs !== array[index - 1].arrivalAirport.fs ||
         flight.arrivalTime !== array[index - 1].arrivalTime) {
-          console.log(flight, array);
-          if(index != 0) {
-            console.log(flight.arrivalAirport.fs !== array[index - 1].arrivalAirport.fs);
-            console.log(flight.arrivalTime !== array[index - 1].arrivalTime);
-          }
           return flight;
         }
       });
@@ -74,8 +70,7 @@ export class AppComponent implements OnInit {
       release();
     }
     else {
-      console.log('ALERT');
-      // await this.initFlights();
+      await this.initFlights();
       release();
     }
   }

@@ -9,14 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        "airports.json",
-        "0-airport.json",
-        "1-airport.json",
-        "2-airport.json",
-        "3-airport.json",
-        "4-airport.json",
-        "5-airport.json"
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
