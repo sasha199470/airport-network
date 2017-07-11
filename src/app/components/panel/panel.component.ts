@@ -31,14 +31,15 @@ export class PanelComponent implements OnInit {
       this.flights.splice(index, 1);
     });
 
-    this.flightsObservable.selectFlightEmitted.subscribe(flight => {
+    this.flightsObservable.selectFlightEmitted.subscribe(selectFlight => {
+      let flight = selectFlight.flight;
       this.selectIndex = this.flights.findIndex(f => f.flightNumber == flight.flightNumber);
     });
   }
 
   selectFlight(flight: Flight, index: number) {
     this.selectIndex = index;
-    this.flightsObservable.selectFlightEmit(flight);
+    this.flightsObservable.selectFlightEmit(flight, true);
   }
 
   checkSelect(index: number) {

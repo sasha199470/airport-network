@@ -88,7 +88,6 @@ export class MapComponent implements OnInit {
           });
 
           marker.addListener('click', () => {
-            selectFlight(flight);
             this.flightsObservable.selectFlightEmit(flight);
           });
 
@@ -117,7 +116,14 @@ export class MapComponent implements OnInit {
         }
       });
 
-      this.flightsObservable.selectFlightEmitted.subscribe(flight => {
+      this.flightsObservable.selectFlightEmitted.subscribe(selectedFlight => {
+        let flight = selectedFlight.flight;
+        if (selectedFlight.isPanelSelect) {
+          let path = getPath(flight);
+          let interpolate = google.maps.geometry.spherical
+            .interpolate(path[0], path[1], 1 - flight.timeLeft / flight.timeTravel);
+          map.setCenter(interpolate);
+        }
         selectFlight(flight);
       });
 

@@ -26,9 +26,9 @@ export class FlightsObservable {
     this.positionFlight.next(flight);
   }
 
-  private selectFlight = new Subject<Flight>();
+  private selectFlight = new Subject<{flight: Flight, isPanelSelect: boolean}>();
   selectFlightEmitted = this.selectFlight.asObservable();
-  selectFlightEmit(flight: Flight) {
-    this.selectFlight.next(flight);
+  selectFlightEmit(flight: Flight, isPanelSelect = false) {
+    this.selectFlight.next({flight: flight, isPanelSelect: isPanelSelect});
   }
 }
