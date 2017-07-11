@@ -47,11 +47,17 @@ export class AppComponent implements OnInit {
 
       let flights = await this.flightService.getFlights(this.airports[i], requestLocalTime);
 
-      if (flights.length > 4 * this.MAX_AIRCRAFT_ON_MAP) {
-        flights = flights.filter((flight, index) => {
-          if (index % 4 == 0) return flight
-        });
-      }
+      flights = flights.filter((flight, index, array) => {
+        if (index == 0 || flight.arrivalAirport.fs !== array[index - 1].arrivalAirport.fs ||
+        flight.arrivalTime !== array[index - 1].arrivalTime) {
+          console.log(flight, array);
+          if(index != 0) {
+            console.log(flight.arrivalAirport.fs !== array[index - 1].arrivalAirport.fs);
+            console.log(flight.arrivalTime !== array[index - 1].arrivalTime);
+          }
+          return flight;
+        }
+      });
 
       this.flightsCounter += flights.length;
 
@@ -68,7 +74,8 @@ export class AppComponent implements OnInit {
       release();
     }
     else {
-      await this.initFlights();
+      console.log('ALERT');
+      // await this.initFlights();
       release();
     }
   }
